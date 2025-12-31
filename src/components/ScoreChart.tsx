@@ -1,5 +1,5 @@
 import React from 'react';
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, LabelList } from 'recharts';
 import type { Entry, Weights } from '../types';
 import { EVALUATION_FIELDS } from '../constants';
 
@@ -42,7 +42,7 @@ const ScoreChart: React.FC<ScoreChartProps> = ({ entries, weights }) => {
 
   return (
     <div style={{ height: '500px', width: '100%', marginTop: '2rem' }}>
-      <h3>Comparison Chart (Stacked)</h3>
+      <h3>Total Score</h3>
       <ResponsiveContainer width="100%" height="100%">
         <BarChart
           data={data}
@@ -61,14 +61,9 @@ const ScoreChart: React.FC<ScoreChartProps> = ({ entries, weights }) => {
             contentStyle={{ backgroundColor: 'white', border: '1px solid #ccc' }}
           />
           <Legend />
-          {EVALUATION_FIELDS.map((field, index) => (
-            <Bar
-              key={field}
-              dataKey={field}
-              stackId="a"
-              fill={COLORS[index % COLORS.length]}
-            />
-          ))}
+          <Bar dataKey="total" fill="#8884d8">
+            <LabelList dataKey="total" position="insideTop" fill="#fff" />
+          </Bar>
         </BarChart>
       </ResponsiveContainer>
     </div>
