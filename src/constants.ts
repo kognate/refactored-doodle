@@ -1,17 +1,13 @@
 export const EVALUATION_FIELDS = [
-  "Base Salary",
-  "Stock Compensation",
-  "Work From Home",
-  "Boat",
-  "Personal Growth",
-  "Technical Growth",
-  "Career Growth",
-  "Exists in 3 years",
-  "Exists in 10 years",
-  "Prestige",
-  "Agency",
-  "Alignment with Values",
-  "Alignment with Goals",
+       "Compensation",
+       "Tooling",
+       "Autonomy",
+       "Trust",
+       "Process Efficiency",
+       "Psychological Safety",
+       "Social Connection",
+       "Flow",
+       "Meaning",
 ] as const;
 
 export type EvaluationField = typeof EVALUATION_FIELDS[number];

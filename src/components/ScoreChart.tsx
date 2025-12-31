@@ -8,12 +8,6 @@ interface ScoreChartProps {
   weights: Weights;
 }
 
-// Generate distinct colors for the fields
-const COLORS = [
-  '#8884d8', '#82ca9d', '#ffc658', '#ff7300', '#0088FE', '#00C49F',
-  '#FFBB28', '#FF8042', '#a4de6c', '#d0ed57', '#8dd1e1', '#83a6ed', '#8e44ad'
-];
-
 const ScoreChart: React.FC<ScoreChartProps> = ({ entries, weights }) => {
   // Transform data for Recharts
   // We need to calculate the weighted score for each field for each entry
